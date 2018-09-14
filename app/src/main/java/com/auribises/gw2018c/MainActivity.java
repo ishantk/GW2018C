@@ -14,7 +14,7 @@ import android.widget.Toast;
 	CallBacks : They will be executed automatically
 			    and we shall override them for our usage
 	1. onCreate
-	onRestart -> Executed when activty is restarted
+	onRestart -> Executed when activity is restarted
 	2. onStart
 	3. onResume
 	4. onPause
