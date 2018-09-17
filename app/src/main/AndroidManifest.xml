@@ -9,24 +9,23 @@
         android:roundIcon="@drawable/ic_bulb"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
-        </activity>
-
-        <activity android:name=".ActivityOne">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ActivityOne"></activity>
         <activity android:name=".ActivityTwo">
             <intent-filter>
                 <action android:name="com.auribises.gw2018c.activitytwo" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".MyActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".YourActivity"></activity>
     </application>
 
 </manifest>
