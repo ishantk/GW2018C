@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.auribises.gw2018c">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -22,15 +22,18 @@
         </activity>
         <activity android:name=".MyActivity" />
         <activity android:name=".YourActivity" />
-        <activity android:name=".LayoutsActivity"></activity>
+        <activity android:name=".LayoutsActivity" />
         <activity android:name=".NewsListActivity">
+
+        </activity>
+        <activity android:name=".NewsActivity" />
+        <activity android:name=".UserRegistrationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewsActivity"></activity>
     </application>
 
 </manifest>
