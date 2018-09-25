@@ -23,14 +23,14 @@
         <activity android:name=".MyActivity" />
         <activity android:name=".YourActivity" />
         <activity android:name=".LayoutsActivity" />
-        <activity android:name=".NewsListActivity">
-
-        </activity>
+        <activity android:name=".NewsListActivity"></activity>
         <activity android:name=".NewsActivity" />
         <activity android:name=".UserRegistrationActivity">
+
+        </activity>
+        <activity android:name=".AllUsersActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

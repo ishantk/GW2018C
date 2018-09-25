@@ -5,6 +5,7 @@ import java.io.Serializable;
 // Model
 public class User implements Serializable{
 
+    public int image;
     public String name;
     public String email;
     public String password;
@@ -15,12 +16,19 @@ public class User implements Serializable{
 
     }
 
-    public User(String name, String email, String password, String gender, String city) {
+    public User(int image, String name, String email, String password, String gender, String city) {
+        this.image = image;
         this.name = name;
         this.email = email;
         this.password = password;
         this.gender = gender;
         this.city = city;
+    }
+
+    public User(int image, String name, String email){
+        this.image = image;
+        this.name = name;
+        this.email = email;
     }
 
     // toString is executed automatically when you print ref variable of object !!

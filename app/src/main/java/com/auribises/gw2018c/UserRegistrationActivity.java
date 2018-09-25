@@ -122,10 +122,20 @@ public class UserRegistrationActivity extends AppCompatActivity implements View.
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         int id = buttonView.getId();
 
-        if(id == R.id.radioButtonMale){
+        /*if(id == R.id.radioButtonMale){
             user.gender = "Male";
         }else{
             user.gender = "Female";
+        }*/
+
+        switch (id){
+            case R.id.radioButtonMale:
+                user.gender = "Male";
+                break;
+
+            case R.id.radioButtonFemale:
+                user.gender = "Female";
+                break;
         }
     }
 
