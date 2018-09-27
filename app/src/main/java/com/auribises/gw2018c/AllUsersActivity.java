@@ -2,6 +2,10 @@ package com.auribises.gw2018c;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -15,12 +19,19 @@ import java.util.ArrayList;
 public class AllUsersActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     //ListView listView;
-    GridView listView;
+    //GridView listView;
+
+    RecyclerView recyclerView;
+
     ArrayList<User> users;
     UserAdapter userAdapter;
 
+    UserRecyclerAdapter recyclerAdapter;
+
     void initViews(){
-        listView = findViewById(R.id.listView);
+
+        recyclerView = findViewById(R.id.recyclerView);
+
         users = new ArrayList<>();
 
         User user1 = new User(R.drawable.contact,"John","john@example.com");
@@ -39,9 +50,20 @@ public class AllUsersActivity extends AppCompatActivity implements AdapterView.O
         users.add(user6);
         users.add(user7);
 
-        userAdapter = new UserAdapter(this,R.layout.list_item,users);
-        listView.setAdapter(userAdapter);
-        listView.setOnItemClickListener(this);
+        //userAdapter = new UserAdapter(this,R.layout.list_item,users);
+        //listView.setAdapter(userAdapter);
+        //listView.setOnItemClickListener(this);
+
+        recyclerAdapter = new UserRecyclerAdapter(this,R.layout.list_item,users);
+
+        //LinearLayoutManager linearLayoutManager  = new LinearLayoutManager(this);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
+
+        //StaggeredGridLayoutManager -> Explore
+
+        recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView.setAdapter(recyclerAdapter);
+
 
     }
 
