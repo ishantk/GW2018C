@@ -3,6 +3,8 @@
     package="com.auribises.gw2018c">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -23,17 +25,17 @@
         <activity android:name=".MyActivity" />
         <activity android:name=".YourActivity" />
         <activity android:name=".LayoutsActivity" />
-        <activity android:name=".NewsListActivity"></activity>
+        <activity android:name=".NewsListActivity" />
         <activity android:name=".NewsActivity" />
-        <activity android:name=".UserRegistrationActivity">
-
-        </activity>
+        <activity android:name=".UserRegistrationActivity"></activity>
         <activity android:name=".AllUsersActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MyLocationActivity"></activity>
     </application>
 
 </manifest>
