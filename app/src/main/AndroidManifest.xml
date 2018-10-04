@@ -32,9 +32,7 @@
         <activity android:name=".UserRegistrationActivity" />
         <activity android:name=".AllUsersActivity" />
         <activity android:name=".MyLocationActivity" />
-        <activity android:name=".AllSongsActivity">
-
-        </activity>
+        <activity android:name=".AllSongsActivity"></activity>
         <activity android:name=".PlayActivity" />
 
         <service
@@ -43,12 +41,15 @@
             android:exported="true" />
 
         <activity android:name=".DialogsActivity">
+
+        </activity>
+        <activity android:name=".MyFragmentsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
