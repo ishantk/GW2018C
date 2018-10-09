@@ -34,7 +34,7 @@ public class UpperFragment extends Fragment implements MyItemClickListener{
 
         webView.setWebViewClient(client);
         webView.getSettings().setJavaScriptEnabled(true);
-
+        webView.loadUrl("https://google.co.in");
 
         return view;
 

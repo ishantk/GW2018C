@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <application
         android:allowBackup="true"
@@ -32,7 +33,7 @@
         <activity android:name=".UserRegistrationActivity" />
         <activity android:name=".AllUsersActivity" />
         <activity android:name=".MyLocationActivity" />
-        <activity android:name=".AllSongsActivity"></activity>
+        <activity android:name=".AllSongsActivity" />
         <activity android:name=".PlayActivity" />
 
         <service
@@ -40,10 +41,24 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".DialogsActivity">
+        <activity android:name=".DialogsActivity" />
+        <activity android:name=".MyFragmentsActivity" />
+        <activity
+            android:name=".WhatsAppActivity"
+            android:label="@string/title_activity_whats_app"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MyNavigationActivity"
+            android:label="@string/title_activity_my_navigation"></activity>
+        <activity
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_main2" />
+        <activity
+            android:name=".MyBottomNavigationActivity"
+            android:label="@string/title_activity_my_bottom_navigation">
 
         </activity>
-        <activity android:name=".MyFragmentsActivity">
+        <activity android:name=".SensorDemoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
