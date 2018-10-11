@@ -76,6 +76,7 @@ public class SensorDemoActivity extends AppCompatActivity implements SensorEvent
             Date date = new Date();
             String text = "Device Shaken at "+date.toString();
             textToSpeech.speak(text,TextToSpeech.QUEUE_FLUSH,null,null);
+            //textToSpeech.speak(text,TextToSpeech.QUEUE_FLUSH,null);
         }
 
         SmsManager smsManager = SmsManager.getDefault();

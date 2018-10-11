@@ -7,7 +7,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
     <application
         android:allowBackup="true"
@@ -49,16 +51,17 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MyNavigationActivity"
-            android:label="@string/title_activity_my_navigation"></activity>
+            android:label="@string/title_activity_my_navigation" />
         <activity
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2" />
         <activity
             android:name=".MyBottomNavigationActivity"
-            android:label="@string/title_activity_my_bottom_navigation">
+            android:label="@string/title_activity_my_bottom_navigation"></activity>
+        <activity android:name=".SensorDemoActivity">
 
         </activity>
-        <activity android:name=".SensorDemoActivity">
+        <activity android:name=".SpeechRecognitionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
