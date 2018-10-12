@@ -8,8 +8,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -57,10 +56,8 @@
             android:label="@string/title_activity_main2" />
         <activity
             android:name=".MyBottomNavigationActivity"
-            android:label="@string/title_activity_my_bottom_navigation"></activity>
-        <activity android:name=".SensorDemoActivity">
-
-        </activity>
+            android:label="@string/title_activity_my_bottom_navigation" />
+        <activity android:name=".SensorDemoActivity" />
         <activity android:name=".SpeechRecognitionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -68,6 +65,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AddCustomerActivity" />
+
+        <provider
+            android:name=".MyContentProvider"
+            android:authorities="co.auribises.gw2018c.mycp"
+            android:enabled="true"
+            android:exported="true"></provider>
     </application>
 
 </manifest>

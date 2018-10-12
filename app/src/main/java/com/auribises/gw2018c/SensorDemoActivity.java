@@ -25,6 +25,8 @@ public class SensorDemoActivity extends AppCompatActivity implements SensorEvent
 
     TextToSpeech textToSpeech;
 
+    int count = 0;
+
     void initViews(){
         txtData = findViewById(R.id.textViewData);
         btnActivate = findViewById(R.id.buttonActivate);
@@ -72,15 +74,17 @@ public class SensorDemoActivity extends AppCompatActivity implements SensorEvent
             txtData.setText("Device Shaken !!");
             sensorManager.unregisterListener(this);
             //Request -> LocationManager to get Location
-
+            count++;
             Date date = new Date();
             String text = "Device Shaken at "+date.toString();
             textToSpeech.speak(text,TextToSpeech.QUEUE_FLUSH,null,null);
             //textToSpeech.speak(text,TextToSpeech.QUEUE_FLUSH,null);
         }
 
-        SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage("+91 99155 71177",null,"Hello, This is text message",null,null);
+        if(count == 1) {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage("+91 99155 71177", null, "Hello, This is text message", null, null);
+        }
 
     }
 
