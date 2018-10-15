@@ -59,13 +59,15 @@
             android:label="@string/title_activity_my_bottom_navigation" />
         <activity android:name=".SensorDemoActivity" />
         <activity android:name=".SpeechRecognitionActivity">
+
+        </activity>
+        <activity android:name=".AddCustomerActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddCustomerActivity" />
 
         <provider
             android:name=".MyContentProvider"

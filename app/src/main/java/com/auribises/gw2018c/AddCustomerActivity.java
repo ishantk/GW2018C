@@ -1,11 +1,14 @@
 package com.auribises.gw2018c;
 
 import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.auribises.gw2018c.model.Customer;
 
@@ -38,11 +41,49 @@ public class AddCustomerActivity extends AppCompatActivity implements View.OnCli
         initViews();
     }
 
+    boolean validateFields(){
+        boolean flag = true;
+
+        if(customer.name.isEmpty())
+            flag = false;
+
+        if(customer.email.isEmpty())
+            flag = false;
+
+        if(customer.phone.isEmpty())
+            flag = false;
+
+        return flag;
+    }
+
+    void addCustomerToDB(){
+
+        ContentValues values = new ContentValues();
+        values.put(Util.COL_NAME,customer.name);
+        values.put(Util.COL_PHONE,customer.phone);
+        values.put(Util.COL_EMAIL,customer.email);
+
+        if(validateFields()) {
+            Uri uri = resolver.insert(Util.CUSTOMER_URI, values);
+            Toast.makeText(this, customer.name + " added in Table at id " + uri.getLastPathSegment(), Toast.LENGTH_LONG).show();
+            clearFields();
+        }else {
+            Toast.makeText(this, "Enter Details First", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    void clearFields(){
+        eTxtName.setText("");
+        eTxtEmail.setText("");
+        eTxtPhone.setText("");
+    }
+
     @Override
     public void onClick(View v) {
         customer.name = eTxtName.getText().toString();
         customer.phone = eTxtPhone.getText().toString();
         customer.email = eTxtEmail.getText().toString();
 
+        addCustomerToDB();
     }
 }

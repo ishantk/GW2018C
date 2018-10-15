@@ -8,6 +8,30 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 
+
+/*
+
+Ishants-Macbook-Air:~ ishantkumar$ cd /Users/ishantkumar/Library/Android/sdk
+Ishants-Macbook-Air:sdk ishantkumar$ cd platform-tools/
+Ishants-Macbook-Air:platform-tools ishantkumar$ ./adb root
+adbd is already running as root
+Ishants-Macbook-Air:platform-tools ishantkumar$ ./adb shell
+generic_x86:/ # cd data/data/com.auribises.gw2018c/databases
+generic_x86:/data/data/com.auribises.gw2018c/databases # ls
+Customers.db
+generic_x86:/data/data/com.auribises.gw2018c/databases # sqlite3 Customers.db
+SQLite version 3.19.4 2017-08-18 19:28:12
+Enter ".help" for usage hints.
+sqlite> .tables
+Customer          android_metadata
+sqlite> select * from Customer;
+1|John Watson|+91 99999 88888|john@example.com
+2|Jenni|+91 99999 77777|jennie@example.com
+3|Jack|+91 88888 77777|jack@example.com
+sqlite>
+
+ */
+
 public class MyContentProvider extends ContentProvider {
 
     DBHelper dbHelper;
@@ -31,8 +55,10 @@ public class MyContentProvider extends ContentProvider {
 
     @Override
     public Uri insert(Uri uri, ContentValues values) {
-        // TODO: Implement this to handle requests to insert a new row.
-        throw new UnsupportedOperationException("Not yet implemented");
+        String tabName = uri.getLastPathSegment();
+        long id = sqLiteDatabase.insert(tabName,null,values);
+        Uri uri1 = Uri.parse("dummy://anything/"+id);
+        return uri1;
     }
 
     @Override
