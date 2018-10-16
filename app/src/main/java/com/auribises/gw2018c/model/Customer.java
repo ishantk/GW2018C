@@ -20,12 +20,10 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return  "ID: " + id +
+                "\nNAME: " + name +
+                "\nPHONE" + phone +
+                "\nEMAIL: " + email;
     }
 }
 
