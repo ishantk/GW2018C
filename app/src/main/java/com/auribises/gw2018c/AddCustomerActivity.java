@@ -25,6 +25,8 @@ public class AddCustomerActivity extends AppCompatActivity implements View.OnCli
 
     ContentResolver resolver;
 
+    boolean updateMode;
+
     void initViews(){
         eTxtName = findViewById(R.id.editTextName);
         eTxtPhone = findViewById(R.id.editTextPhone);
@@ -35,6 +37,17 @@ public class AddCustomerActivity extends AppCompatActivity implements View.OnCli
 
         customer = new Customer();
         resolver = getContentResolver();
+
+        Intent rcv = getIntent();
+        updateMode = rcv.hasExtra("keyCustomer");
+
+        if(updateMode){
+            customer = (Customer)rcv.getSerializableExtra("keyCustomer");
+            eTxtName.setText(customer.name);
+            eTxtPhone.setText(customer.phone);
+            eTxtEmail.setText(customer.email);
+            btnAdd.setText("Update Customer");
+        }
     }
 
     @Override
@@ -67,9 +80,27 @@ public class AddCustomerActivity extends AppCompatActivity implements View.OnCli
         values.put(Util.COL_EMAIL,customer.email);
 
         if(validateFields()) {
-            Uri uri = resolver.insert(Util.CUSTOMER_URI, values);
-            Toast.makeText(this, customer.name + " added in Table at id " + uri.getLastPathSegment(), Toast.LENGTH_LONG).show();
-            clearFields();
+
+            if(updateMode){
+
+                String where = Util.COL_ID+" = "+customer.id;
+                int i = resolver.update(Util.CUSTOMER_URI,values,where,null);
+
+                if(i>0){
+                    Toast.makeText(this, customer.name + " updated in Table", Toast.LENGTH_LONG).show();
+
+                    Intent data = new Intent();
+                    data.putExtra("keyUpdatedCustomer",customer);
+                    setResult(201,data);
+
+                    finish();
+                }
+
+            }else {
+                Uri uri = resolver.insert(Util.CUSTOMER_URI, values);
+                Toast.makeText(this, customer.name + " added in Table at id " + uri.getLastPathSegment(), Toast.LENGTH_LONG).show();
+                clearFields();
+            }
         }else {
             Toast.makeText(this, "Enter Details First", Toast.LENGTH_LONG).show();
         }

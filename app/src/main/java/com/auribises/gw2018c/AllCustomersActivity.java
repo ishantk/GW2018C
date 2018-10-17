@@ -3,9 +3,11 @@ package com.auribises.gw2018c;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -119,7 +121,10 @@ public class AllCustomersActivity extends AppCompatActivity implements AdapterVi
                         break;
 
                     case 2:
-
+                        Intent intent = new Intent(AllCustomersActivity.this,AddCustomerActivity.class);
+                        intent.putExtra("keyCustomer",customer);
+                        //startActivity(intent);
+                        startActivityForResult(intent,101);
                         break;
 
                     case 3:
@@ -136,5 +141,24 @@ public class AllCustomersActivity extends AppCompatActivity implements AdapterVi
         pos = position;
         customer = customers.get(position);
         showOptions();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 101 && resultCode == 201){
+            Customer cRef = (Customer) data.getSerializableExtra("keyUpdatedCustomer");
+            customers.set(pos,cRef);
+
+            adapter.clear();
+            for(Customer c : customers){
+                Log.i("CustomerList","Customer Details:"+c.toString());
+                adapter.add(c.name+"\n"+c.phone);
+            }
+
+            // Refresh
+            adapter.notifyDataSetChanged();
+
+            Toast.makeText(this,"==onActivityResult==",Toast.LENGTH_LONG).show();
+        }
     }
 }

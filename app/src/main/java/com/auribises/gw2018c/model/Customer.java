@@ -1,6 +1,8 @@
 package com.auribises.gw2018c.model;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable{
 
     public Integer id;
     public String name;
