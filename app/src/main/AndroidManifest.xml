@@ -3,6 +3,8 @@
     package="com.auribises.gw2018c">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -22,7 +24,6 @@
         <activity android:name=".ActivityTwo">
             <intent-filter>
                 <action android:name="com.auribises.gw2018c.activitytwo" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -59,7 +60,7 @@
             android:label="@string/title_activity_my_bottom_navigation" />
         <activity android:name=".SensorDemoActivity" />
         <activity android:name=".SpeechRecognitionActivity" />
-        <activity android:name=".AddCustomerActivity"></activity>
+        <activity android:name=".AddCustomerActivity" />
 
         <provider
             android:name=".MyContentProvider"
@@ -68,9 +69,7 @@
             android:exported="true" />
 
         <activity android:name=".AllCustomersActivity" />
-        <activity android:name=".FilesDemoActivity">
-
-        </activity>
+        <activity android:name=".FilesDemoActivity"></activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -78,6 +77,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AllBooksActivity"></activity>
     </application>
 
 </manifest>
