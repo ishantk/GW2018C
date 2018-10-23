@@ -1,5 +1,6 @@
 package com.auribises.gw2018c;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
@@ -22,7 +23,7 @@ public class SplashActivity extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             if(msg.what == 101){
-                Intent intent = new Intent(SplashActivity.this,AllBooksActivity.class);
+                Intent intent = new Intent(SplashActivity.this,NotificationActivity.class);
                 startActivity(intent);
                 finish();
             }
