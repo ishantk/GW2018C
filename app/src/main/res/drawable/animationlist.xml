@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <!--Frame Animation-->
+
+    <item android:duration="1000"
+        android:drawable="@drawable/folder"/>
+
+    <item android:duration="1000"
+        android:drawable="@drawable/category"/>
+
+    <item android:duration="1000"
+        android:drawable="@drawable/music"/>
+
+    <item android:duration="1000"
+        android:drawable="@drawable/contact"/>
+
+    <item android:duration="1000"
+        android:drawable="@drawable/todo"/>
+
+</animation-list>
