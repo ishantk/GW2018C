@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">MyInovApp</string>
-    <string name="welcome">Welcome</string>
-    <string name="quote">Work Hard and Get Luckier</string>
+    <string name="app_name">maInnovApp</string>
+    <string name="welcome">Bienvenue</string>
+    <string name="quote">Travailler fort et avoir plus de chance</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
